@@ -3,7 +3,7 @@
 ![Platform](https://img.shields.io/badge/platform-Ubuntu%20Server-E95420?logo=ubuntu&logoColor=white)
 ![Docker](https://img.shields.io/badge/container-Docker%20%2F%20Compose-2496ED?logo=docker&logoColor=white)
 ![Tailscale](https://img.shields.io/badge/VPN-Tailscale-242938?logo=tailscale&logoColor=white)
-![License](https://img.shields.io/badge/license-MIT-green)
+
 ![Status](https://img.shields.io/badge/status-active-brightgreen)
 
 A complete, copy-paste-ready, consumer-friendly documentation set for building a self-hosted Ubuntu server: Docker, Docker Compose, CasaOS, Tailscale, optional Proxmox virtualization, Tailwind CSS, and secure remote/public connectivity via Cloudflare Tunnel.
