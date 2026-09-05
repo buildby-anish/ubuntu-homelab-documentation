@@ -11,6 +11,51 @@ A complete, copy-paste-ready, consumer-friendly documentation set for building a
 Written so a new machine can go from a blank Ubuntu install to a hardened, monitored, backed-up homelab by working through the numbered guides in `docs/`.
 
 > **⚠️ Before you start:** This repository is a documentation and deployment **reference**, not a finished server. Replace every value marked `<CHANGE-ME>` before using it. **Never commit** passwords, API tokens, Tailscale auth keys, Cloudflare tokens, SSH private keys, `.env` files containing secrets, or any other credentials — see [Secret policy](#secret-policy).
+## Consumer‑Friendly Quick‑Start
+
+This section walks you through the whole setup with copy‑paste commands and brief explanations, ideal for newcomers.
+
+### 1️⃣ Prerequisites
+
+- A physical machine or VM that can run **Ubuntu Server 22.04 LTS** (or 24.04).
+- A USB flash drive (≥ 4 GB) for the installer.
+- Ethernet connection (recommended) or Wi‑Fi.
+- A laptop/desktop (Windows/macOS/Linux) for SSH and web access.
+- Optional: free accounts on **GitHub**, **Tailscale**, and **Cloudflare**.
+
+### 2️⃣ Install Ubuntu Server
+
+1. Download the ISO from the official site.
+2. Flash it to the USB (on macOS: `sudo dd if=ubuntu‑server.iso of=/dev/rdiskN bs=4m status=progress && sync`).
+3. Boot the machine, follow the installer prompts, and note the IP address.
+
+### 3️⃣ Get the Documentation Repo
+
+```bash
+git clone https://github.com/<YOUR‑USERNAME>/ubuntu-homelab-documentation.git ~/homelab
+cd ~/homelab
+cp docker/.env.example docker/.env   # edit the .env file with your secrets
+```
+
+### 4️⃣ Run the Quick‑Start Script
+
+```bash
+bash docs/quick-start.sh
+```
+
+*(The script runs the commands from the **Quick start** section, installing Docker, Tailscale, and CasaOS.)*
+
+### 5️⃣ Verify
+
+```bash
+docker ps
+tailscale status
+curl http://$(hostname -I | awk '{print $1}')
+```
+
+You should see Docker containers running and the CasaOS web UI reachable at the displayed IP.
+
+Feel free to explore the rest of the docs for deeper hardening, monitoring, and backups.
 
 ---
 
